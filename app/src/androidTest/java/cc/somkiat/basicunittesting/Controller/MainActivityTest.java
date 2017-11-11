@@ -84,7 +84,7 @@ public class MainActivityTest {
         onView(withId(R.id.saveButton)).perform(scrollTo(), click());
         onView(withText("Name contain non Alphabet Characters")).inRoot(withDecorView(not(is(mActivityTestRule.getActivity().getWindow().getDecorView())))).check(matches(isDisplayed()));
     }
-    
+
     @Test
     public void saveFailInvalidEmail() {
         onView(withId(R.id.revertButton)).perform(scrollTo(), click());
