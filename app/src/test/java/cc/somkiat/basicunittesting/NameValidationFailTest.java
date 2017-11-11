@@ -43,5 +43,13 @@ public class NameValidationFailTest {
         assertEquals("Name contain non Alphabet Characters", result.getErrorMessage());
     }
 
-    
+    @Test
+    public void NameContainSpecialCharacter() {
+        NameValidation nameValidation = new NameValidation();
+        String inputName = "Smith##";
+        ValidationResult result = nameValidation.validate(inputName);
+
+        assertFalse(result.getResult());
+        assertEquals("Name contain non Alphabet Characters", result.getErrorMessage());
+    }
 }
