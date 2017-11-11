@@ -52,4 +52,14 @@ public class NameValidationFailTest {
         assertFalse(result.getResult());
         assertEquals("Name contain non Alphabet Characters", result.getErrorMessage());
     }
+
+    @Test
+    public void NameIsNonEnglish() {
+        NameValidation nameValidation = new NameValidation();
+        String inputName = "สมชาย หมายใจ";
+        ValidationResult result = nameValidation.validate(inputName);
+
+        assertFalse(result.getResult());
+        assertEquals("Name contain non Alphabet Characters", result.getErrorMessage());
+    }
 }
