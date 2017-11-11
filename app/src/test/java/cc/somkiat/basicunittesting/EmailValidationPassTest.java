@@ -22,4 +22,13 @@ public class EmailValidationPassTest {
 
         assertTrue(result.getResult());
     }
+
+    @Test
+    public void EmailWithDot() {
+        EmailValidation emailValidation = new EmailValidation();
+        String inputEmail = "test.test@gmail.com";
+        ValidationResult result = emailValidation.validate(inputEmail);
+
+        assertTrue(result.getResult());
+    }
 }
