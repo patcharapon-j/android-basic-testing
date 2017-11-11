@@ -56,5 +56,14 @@ public class MainActivityTest {
         onView(withId(R.id.saveButton)).perform(scrollTo(), click());
         onView(withText("Save Successful")).inRoot(withDecorView(not(is(mActivityTestRule.getActivity().getWindow().getDecorView())))).check(matches(isDisplayed()));
     }
+    
+    @Test
+    public void saveFailNoName() {
+        onView(withId(R.id.revertButton)).perform(scrollTo(), click());
+        onView(withId(R.id.userNameInput)).perform(scrollTo() ,replaceText(""));
+        onView(withId(R.id.emailInput)).perform(scrollTo(), replaceText("test@gmail.com"));
+        onView(withId(R.id.saveButton)).perform(scrollTo(), click());
+        onView(withText("Name is Empty String")).inRoot(withDecorView(not(is(mActivityTestRule.getActivity().getWindow().getDecorView())))).check(matches(isDisplayed()));
+    }
 
 }
