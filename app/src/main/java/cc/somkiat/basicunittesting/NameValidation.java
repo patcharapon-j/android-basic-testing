@@ -6,6 +6,10 @@ package cc.somkiat.basicunittesting;
 
 class NameValidation {
     public Boolean validate(String inputName) {
-        return false;
+        
+    }
+
+    private Boolean validateNameIsNull(String name) {
+        return name != null;
     }
 }
