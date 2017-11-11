@@ -12,7 +12,9 @@ public class EmailValidation {
     public ValidationResult validate(String email) {
         try {
 
+            validateEmailIsNull(email);
             validateEmailIsEmpty(email);
+
 
         } catch (Exception e){
             return new ValidationResult(false, e.getMessage());
@@ -24,6 +26,12 @@ public class EmailValidation {
     private void validateEmailIsEmpty(String email) throws EmailValidationException {
         if(email.isEmpty()) {
             throw new EmailValidationException(("Email is Empty"));
+        }
+    }
+
+    private void validateEmailIsNull(String email) throws EmailValidationException {
+        if(email == null) {
+            throw new EmailValidationException("Email is Null");
         }
     }
 
