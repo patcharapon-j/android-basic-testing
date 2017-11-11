@@ -33,4 +33,14 @@ public class NameValidationFailTest {
         assertEquals("Name is Empty String", result.getErrorMessage());
     }
 
+    @Test
+    public void NameContainNumber() {
+        NameValidation nameValidation = new NameValidation();
+        String inputName = "Smith112";
+        ValidationResult result = nameValidation.validate(inputName);
+
+        assertFalse(result.getResult());
+        assertEquals("Name contain non Alphabet Characters", result.getErrorMessage());
+    }
+
 }
