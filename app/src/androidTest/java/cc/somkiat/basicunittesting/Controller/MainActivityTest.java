@@ -76,4 +76,12 @@ public class MainActivityTest {
         onView(withText("Email is Empty")).inRoot(withDecorView(not(is(mActivityTestRule.getActivity().getWindow().getDecorView())))).check(matches(isDisplayed()));
     }
 
+    @Test
+    public void saveFailInvalidName() {
+        onView(withId(R.id.revertButton)).perform(scrollTo(), click());
+        onView(withId(R.id.userNameInput)).perform(scrollTo() ,replaceText("Sam1337"));
+        onView(withId(R.id.emailInput)).perform(scrollTo(), replaceText("test@gmail.com"));
+        onView(withId(R.id.saveButton)).perform(scrollTo(), click());
+        onView(withText("Name contain non Alphabet Characters")).inRoot(withDecorView(not(is(mActivityTestRule.getActivity().getWindow().getDecorView())))).check(matches(isDisplayed()));
+    }
 }
