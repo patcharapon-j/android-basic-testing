@@ -13,6 +13,7 @@ class NameValidation {
         try {
             validateNameIsNull(inputName);
             validateNameIsEmptyString(inputName);
+            validateNameIsAlphabet(inputName);
         } catch (Exception e){
             return new ValidationResult(false, e.getMessage());
         }
@@ -28,6 +29,12 @@ class NameValidation {
     private void validateNameIsEmptyString(String name) throws NameValidationException {
         if(name.isEmpty()) {
             throw new NameValidationException("Name is Empty String");
+        }
+    }
+
+    private void validateNameIsAlphabet(String name) throws NameValidationException {
+        if(!name.matches("^[ A-Za-z]+$")) {
+            throw new NameValidationException("Name contain non Alphabet Characters");
         }
     }
 }
