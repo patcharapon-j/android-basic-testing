@@ -31,4 +31,13 @@ public class EmailValidationPassTest {
 
         assertTrue(result.getResult());
     }
+
+    @Test
+    public void EmailWithDotEnd() {
+        EmailValidation emailValidation = new EmailValidation();
+        String inputEmail = "test@gmail.co.th";
+        ValidationResult result = emailValidation.validate(inputEmail);
+
+        assertTrue(result.getResult());
+    }
 }
