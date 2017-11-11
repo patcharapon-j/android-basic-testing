@@ -12,6 +12,7 @@ class NameValidation {
     public ValidationResult validate(String inputName) {
         try {
             validateNameIsNull(inputName);
+            validateNameIsEmptyString(inputName);
         } catch (Exception e){
             return new ValidationResult(false, e.getMessage());
         }
@@ -21,6 +22,12 @@ class NameValidation {
     private void validateNameIsNull(String name) throws NameValidationException {
         if(name == null) {
             throw new NameValidationException("Name is Null");
+        }
+    }
+
+    private void validateNameIsEmptyString(String name) throws NameValidationException {
+        if(name.isEmpty()) {
+            throw new NameValidationException("Name is Empty String");
         }
     }
 }
