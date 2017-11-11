@@ -1,10 +1,6 @@
 package cc.somkiat.basicunittesting;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-
-import cc.somkiat.basicunittesting.MyException.NameIsNullException;
+import cc.somkiat.basicunittesting.MyException.NameValidationException;
 
 
 /**
@@ -13,19 +9,18 @@ import cc.somkiat.basicunittesting.MyException.NameIsNullException;
 
 class NameValidation {
 
-    public Boolean validate(String inputName) {
+    public ValidationResult validate(String inputName) {
         try {
             validateNameIsNull(inputName);
         } catch (Exception e){
-            return false;
+            return new ValidationResult(false, e.getMessage());
         }
-
-        return true;
+        return new ValidationResult(true, null);
     }
 
-    private void validateNameIsNull(String name) throws NameIsNullException {
+    private void validateNameIsNull(String name) throws NameValidationException {
         if(name == null) {
-            throw new NameIsNullException("Name is Null");
+            throw new NameValidationException("Name is Null");
         }
     }
 }
