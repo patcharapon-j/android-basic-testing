@@ -2,6 +2,7 @@ package cc.somkiat.basicunittesting;
 
 import org.junit.Test;
 
+import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertFalse;
 
 /**
@@ -15,7 +16,7 @@ public class NameValidationFailTest {
         NameValidation nameValidation = new NameValidation();
         String inputName = null;
         Boolean result = nameValidation.validate(inputName);
-        assertFalse("Name is NULL must return FALSE", result);
+        assertFalse("Name is NULL must return null", result);
     }
 
 }
