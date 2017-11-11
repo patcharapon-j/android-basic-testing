@@ -82,4 +82,14 @@ public class EmailValidationFailTest {
         assertFalse(result.getResult());
         assertEquals("Email is Invalid", result.getErrorMessage());
     }
+
+    @Test
+    public void EmailHaveDoubleAmpersan() {
+        EmailValidation emailValidation = new EmailValidation();
+        String inputEmail = "test@@gmail.com";
+        ValidationResult result = emailValidation.validate(inputEmail);
+
+        assertFalse(result.getResult());
+        assertEquals("Email is Invalid", result.getErrorMessage());
+    }
 }
