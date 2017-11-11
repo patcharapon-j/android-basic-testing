@@ -32,4 +32,14 @@ public class EmailValidationFailTest {
         assertFalse(result.getResult());
         assertEquals("Email is Null", result.getErrorMessage());
     }
+
+    @Test
+    public void EmailIsRandomString() {
+        EmailValidation emailValidation = new EmailValidation();
+        String inputEmail = "asd.as>jff@kl";
+        ValidationResult result = emailValidation.validate(inputEmail);
+
+        assertFalse(result.getResult());
+        assertEquals("Email is Invalid", result.getErrorMessage());
+    }
 }
