@@ -1,8 +1,10 @@
-package cc.somkiat.basicunittesting;
+package cc.somkiat.basicunittesting.Controller;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+
+import cc.somkiat.basicunittesting.R;
 
 public class MainActivity extends AppCompatActivity {
 

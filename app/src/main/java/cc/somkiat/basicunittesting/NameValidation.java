@@ -1,5 +1,6 @@
 package cc.somkiat.basicunittesting;
 
+import cc.somkiat.basicunittesting.Model.ValidationResult;
 import cc.somkiat.basicunittesting.MyException.NameValidationException;
 
 
@@ -11,12 +12,15 @@ class NameValidation {
 
     public ValidationResult validate(String inputName) {
         try {
+
             validateNameIsNull(inputName);
             validateNameIsEmptyString(inputName);
             validateNameIsAlphabet(inputName);
+
         } catch (Exception e){
             return new ValidationResult(false, e.getMessage());
         }
+
         return new ValidationResult(true, null);
     }
 

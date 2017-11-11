@@ -1,4 +1,4 @@
-package cc.somkiat.basicunittesting;
+package cc.somkiat.basicunittesting.Model;
 
 /**
  * Created by patcharaponjoksamut on 11/11/2017 AD.
