@@ -48,4 +48,13 @@ public class MainActivityTest {
         onView(withId(R.id.emailInput)).check(matches(withText("")));
     }
 
+    @Test
+    public void saveSuccessfulTest() {
+        onView(withId(R.id.revertButton)).perform(scrollTo(), click());
+        onView(withId(R.id.userNameInput)).perform(scrollTo() ,replaceText("John Smith"));
+        onView(withId(R.id.emailInput)).perform(scrollTo(), replaceText("test@gmail.com"));
+        onView(withId(R.id.saveButton)).perform(scrollTo(), click());
+        onView(withText("Save Successful")).inRoot(withDecorView(not(is(mActivityTestRule.getActivity().getWindow().getDecorView())))).check(matches(isDisplayed()));
+    }
+
 }
