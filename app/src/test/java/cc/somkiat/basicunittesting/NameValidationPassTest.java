@@ -29,4 +29,13 @@ public class NameValidationPassTest {
 
         assertTrue(result.getResult());
     }
+
+    @Test
+    public void NameIsFullName() {
+        NameValidation nameValidation = new NameValidation();
+        String inputName = "John Smith";
+        ValidationResult result = nameValidation.validate(inputName);
+
+        assertTrue(result.getResult());
+    }
 }
