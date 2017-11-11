@@ -22,4 +22,14 @@ public class EmailValidationFailTest {
         assertFalse(result.getResult());
         assertEquals("Email is Empty", result.getErrorMessage());
     }
+
+    @Test
+    public void EmailIsNull() {
+        EmailValidation emailValidation = new EmailValidation();
+        String inputEmail = null;
+        ValidationResult result = emailValidation.validate(inputEmail);
+
+        assertFalse(result.getResult());
+        assertEquals("Email is Null", result.getErrorMessage());
+    }
 }
