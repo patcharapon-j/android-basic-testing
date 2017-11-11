@@ -38,4 +38,13 @@ public class NameValidationPassTest {
 
         assertTrue(result.getResult());
     }
+
+    @Test
+    public void NameisFullNameWithMiddleName() {
+        NameValidation nameValidation = new NameValidation();
+        String inputName = "John Regal Smith";
+        ValidationResult result = nameValidation.validate(inputName);
+
+        assertTrue(result.getResult());
+    }
 }
