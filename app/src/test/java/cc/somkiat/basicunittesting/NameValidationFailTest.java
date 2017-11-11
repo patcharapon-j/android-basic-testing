@@ -19,8 +19,18 @@ public class NameValidationFailTest {
         String inputName = null;
         ValidationResult result = nameValidation.validate(inputName);
 
-        assertFalse("Name is NULL must return null", result.getResult());
+        assertFalse(result.getResult());
         assertEquals("Name is Null", result.getErrorMessage());
+    }
+
+    @Test
+    public void NameIsEmptyString() {
+        NameValidation nameValidation = new NameValidation();
+        String inputName = "";
+        ValidationResult result = nameValidation.validate(inputName);
+
+        assertFalse(result.getResult());
+        assertEquals("Name is Empty String", result.getErrorMessage());
     }
 
 }
