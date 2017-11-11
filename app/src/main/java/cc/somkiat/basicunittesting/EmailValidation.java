@@ -1,5 +1,7 @@
 package cc.somkiat.basicunittesting;
 
+import org.apache.commons.validator.routines.EmailValidator;
+
 import cc.somkiat.basicunittesting.Model.ValidationResult;
 import cc.somkiat.basicunittesting.MyException.EmailValidationException;
 
@@ -14,6 +16,7 @@ public class EmailValidation {
 
             validateEmailIsNull(email);
             validateEmailIsEmpty(email);
+            validateEmailIsValid(email);
 
 
         } catch (Exception e){
@@ -32,6 +35,12 @@ public class EmailValidation {
     private void validateEmailIsNull(String email) throws EmailValidationException {
         if(email == null) {
             throw new EmailValidationException("Email is Null");
+        }
+    }
+
+    private void validateEmailIsValid(String email) throws EmailValidationException {
+        if(!EmailValidator.getInstance().isValid(email)) {
+            throw new EmailValidationException("Email is Invalid");
         }
     }
 
