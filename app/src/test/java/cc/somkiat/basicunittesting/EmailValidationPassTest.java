@@ -40,4 +40,13 @@ public class EmailValidationPassTest {
 
         assertTrue(result.getResult());
     }
+
+    @Test
+    public void EmailWithStrangeEnd() {
+        EmailValidation emailValidation = new EmailValidation();
+        String inputEmail = "test@gmail.xyz";
+        ValidationResult result = emailValidation.validate(inputEmail);
+
+        assertTrue(result.getResult());
+    }
 }
