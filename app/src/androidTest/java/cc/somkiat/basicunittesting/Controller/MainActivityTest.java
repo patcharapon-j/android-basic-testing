@@ -84,4 +84,14 @@ public class MainActivityTest {
         onView(withId(R.id.saveButton)).perform(scrollTo(), click());
         onView(withText("Name contain non Alphabet Characters")).inRoot(withDecorView(not(is(mActivityTestRule.getActivity().getWindow().getDecorView())))).check(matches(isDisplayed()));
     }
+    
+    @Test
+    public void saveFailInvalidEmail() {
+        onView(withId(R.id.revertButton)).perform(scrollTo(), click());
+        onView(withId(R.id.userNameInput)).perform(scrollTo() ,replaceText("John Smith"));
+        onView(withId(R.id.emailInput)).perform(scrollTo(), replaceText("gmail.com"));
+        onView(withId(R.id.saveButton)).perform(scrollTo(), click());
+        onView(withText("Email is Invalid")).inRoot(withDecorView(not(is(mActivityTestRule.getActivity().getWindow().getDecorView())))).check(matches(isDisplayed()));
+    }
+
 }
