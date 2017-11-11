@@ -64,16 +64,6 @@ public class EmailValidationFailTest {
     }
 
     @Test
-    public void EmailMissingEnd() {
-        EmailValidation emailValidation = new EmailValidation();
-        String inputEmail = "test@gmail";
-        ValidationResult result = emailValidation.validate(inputEmail);
-
-        assertFalse(result.getResult());
-        assertEquals("Email is Invalid", result.getErrorMessage());
-    }
-
-    @Test
     public void EmailInvalidEnd() {
         EmailValidation emailValidation = new EmailValidation();
         String inputEmail = "test@gmail.ccc";
