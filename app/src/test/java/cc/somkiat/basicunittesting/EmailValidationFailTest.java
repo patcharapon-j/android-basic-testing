@@ -52,4 +52,14 @@ public class EmailValidationFailTest {
         assertFalse(result.getResult());
         assertEquals("Email is Invalid", result.getErrorMessage());
     }
+
+    @Test
+    public void EmailIsMissingDomain() {
+        EmailValidation emailValidation = new EmailValidation();
+        String inputEmail = "test.com";
+        ValidationResult result = emailValidation.validate(inputEmail);
+
+        assertFalse(result.getResult());
+        assertEquals("Email is Invalid", result.getErrorMessage());
+    }
 }
