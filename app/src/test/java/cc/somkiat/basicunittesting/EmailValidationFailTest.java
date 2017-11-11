@@ -72,4 +72,14 @@ public class EmailValidationFailTest {
         assertFalse(result.getResult());
         assertEquals("Email is Invalid", result.getErrorMessage());
     }
+
+    @Test
+    public void EmailInvalidEnd() {
+        EmailValidation emailValidation = new EmailValidation();
+        String inputEmail = "test@gmail.ccc";
+        ValidationResult result = emailValidation.validate(inputEmail);
+
+        assertFalse(result.getResult());
+        assertEquals("Email is Invalid", result.getErrorMessage());
+    }
 }
