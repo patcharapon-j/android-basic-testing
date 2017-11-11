@@ -8,7 +8,7 @@ import cc.somkiat.basicunittesting.MyException.NameValidationException;
  * Created by patcharaponjoksamut on 11/11/2017 AD.
  */
 
-class NameValidation {
+public class NameValidation {
 
     public ValidationResult validate(String inputName) {
         try {

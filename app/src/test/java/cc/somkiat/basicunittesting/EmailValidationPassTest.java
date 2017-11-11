@@ -4,8 +4,6 @@ import org.junit.Test;
 
 import cc.somkiat.basicunittesting.Model.ValidationResult;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertTrue;
 
 /**
